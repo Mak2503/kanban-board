@@ -8,11 +8,11 @@ const Logo = () => {
       <Image
         src="/logo.svg"
         alt="logo"
-        width={20}
-        height={20}
+        width={30}
+        height={30}
         className="mr-3"
       />
-      <h1 className="text-2xl font-bold text-primaryText">kanban</h1>
+      <h1 className="text-4xl font-bold text-primaryText">kanban</h1>
     </div>
   );
 };
