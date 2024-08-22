@@ -3,8 +3,14 @@
 import Logo from "./Logo";
 import kanbanData from "@/constants/data.json";
 import BoardIcon from "./BoardIcon";
+import { Dispatch, SetStateAction } from "react";
 
-const SideBar = () => {
+type Props = {
+  board: string;
+  setBoard: Dispatch<SetStateAction<string>>;
+};
+
+const SideBar = ({ board, setBoard }: Props) => {
   return (
     <div className="p-8 w-1/4 h-screen bg-secondaryBg border-r border-r-[#363642]">
       <Logo />
@@ -12,14 +18,18 @@ const SideBar = () => {
         <h1 className="text-xs text-secondaryText tracking-widest font-semibold">
           ALL BOARDS ({kanbanData.data.length})
         </h1>
-        {/* TODO: Implement board selection functionality */}
         <div className="mt-4">
-          {kanbanData.data.map((data, index) => (
+          {kanbanData.data.map((data) => (
             <div
               key={data.id}
-              className={`flex items-center p-3 pl-8 -ml-8 first:text-primaryText font-semibold text-secondaryText first:bg-primary first:rounded-r-3xl`}
+              className={`flex items-center cursor-pointer p-3 pl-8 -ml-8 ${
+                board === data.name
+                  ? "text-primaryText bg-primary rounded-r-3xl"
+                  : "text-secondaryText"
+              } font-semibold`}
+              onClick={() => setBoard(data.name)}
             >
-              {index === 0 ? (
+              {board === data.name ? (
                 <BoardIcon border="#feffff" bg="#645fc6" />
               ) : (
                 <BoardIcon />
