@@ -1,5 +1,9 @@
-import Image from "next/image";
+import SideBar from "@/components/SideBar";
 
 export default function Home() {
-  return <main>Hello World</main>;
+  return (
+    <main className="bg-primaryBg">
+      <SideBar />
+    </main>
+  );
 }
