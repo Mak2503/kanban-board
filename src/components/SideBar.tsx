@@ -1,6 +1,7 @@
 "use client";
 
 import Logo from "./Logo";
+import kanbanData from "@/constants/data.json";
 
 const SideBar = () => {
   return (
@@ -11,22 +12,22 @@ const SideBar = () => {
           className="text-xs text-secondaryText"
           style={{ letterSpacing: "3px" }}
         >
-          ALL BOARDS (3)
+          ALL BOARDS ({kanbanData.data.length})
         </h1>
         {/* 
           TODO: 
-          1. Show boards from json data 
-          2. Add Board Icon
-          3. Implement board selection functionality
+          1. Add Board Icon
+          2. Implement board selection functionality
         */}
         <div className="mt-4 text-sm">
-          <div className="p-3 pl-8 -ml-8 text-primaryText bg-primary rounded-r-3xl">
-            Platform Launch
-          </div>
-          <div className="p-3 pl-8 -ml-8 text-secondaryText">
-            Marketing Plan
-          </div>
-          <div className="p-3 pl-8 -ml-8 text-secondaryText">Roadmap</div>
+          {kanbanData.data.map((data) => (
+            <div
+              key={data.id}
+              className={`p-3 pl-8 -ml-8 first:text-primaryText text-secondaryText first:bg-primary first:rounded-r-3xl`}
+            >
+              {data.name}
+            </div>
+          ))}
         </div>
       </div>
     </div>
