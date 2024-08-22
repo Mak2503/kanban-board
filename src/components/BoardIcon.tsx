@@ -24,7 +24,7 @@ const BoardIcon = ({ border = "#858fa1", bg = "#2C2C38" }: Props) => {
           y2="-5"
           transform="matrix(0.999974 -0.00725502 0.00435017 0.999991 10 123.987)"
           stroke={border}
-          stroke-width="10"
+          strokeWidth="10"
         />
         <line
           x1="145.972"
@@ -32,7 +32,7 @@ const BoardIcon = ({ border = "#858fa1", bg = "#2C2C38" }: Props) => {
           x2="230"
           y2="62.7375"
           stroke={border}
-          stroke-width="10"
+          strokeWidth="10"
         />
         <line
           x1="145.972"
@@ -40,7 +40,7 @@ const BoardIcon = ({ border = "#858fa1", bg = "#2C2C38" }: Props) => {
           x2="230"
           y2="174.231"
           stroke={border}
-          stroke-width="10"
+          strokeWidth="10"
         />
         <line
           x1="140.972"
@@ -48,7 +48,7 @@ const BoardIcon = ({ border = "#858fa1", bg = "#2C2C38" }: Props) => {
           x2="140.972"
           y2="10"
           stroke={border}
-          stroke-width="10"
+          strokeWidth="10"
         />
       </svg>
     </div>
