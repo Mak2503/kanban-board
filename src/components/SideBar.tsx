@@ -12,7 +12,7 @@ type Props = {
 
 const SideBar = ({ board, setBoard }: Props) => {
   return (
-    <div className="p-8 w-1/4 h-screen bg-secondaryBg border-r border-r-[#363642]">
+    <div className="p-8 w-1/4 h-screen bg-secondaryBg border-r-2 border-r-[#363642]">
       <Logo />
       <div className="mt-12">
         <h1 className="text-xs text-secondaryText tracking-widest font-semibold">
