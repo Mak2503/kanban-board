@@ -16,7 +16,7 @@ const Board = ({ board }: Props) => {
   const doneTasks = filter(kanban?.tasks, (task) => task.status === "DONE");
 
   return (
-    <div className="p-8 flex justify-start gap-12">
+    <div className="p-8 flex justify-start gap-6">
       <Column status="TODO" color="bg-statusCyan" tasks={todoTasks} />
       <Column status="DOING" color="bg-statusPurple" tasks={doingTasks} />
       <Column status="DONE" color="bg-statusGreen" tasks={doneTasks} />
