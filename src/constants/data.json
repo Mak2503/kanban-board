@@ -8,14 +8,39 @@
           "id": "11",
           "title": "Build UI for onboarding flow",
           "description": "Test",
-          "subTasks": ["Research competitor"],
+          "subTasks": [
+            {
+              "id": "111",
+              "title": "Research competitor",
+              "isCompleted": false
+            }
+          ],
           "status": "DOING"
         },
         {
           "id": "12",
           "title": "Build UI for search",
           "description": "Test",
-          "subTasks": ["Research competitor"],
+          "subTasks": [
+            {
+              "id": "121",
+              "title": "Research competitor",
+              "isCompleted": false
+            }
+          ],
+          "status": "TODO"
+        },
+        {
+          "id": "13",
+          "title": "Build UI for onboarding flow",
+          "description": "Test",
+          "subTasks": [
+            {
+              "id": "121",
+              "title": "Research competitor",
+              "isCompleted": false
+            }
+          ],
           "status": "TODO"
         }
       ]
