@@ -6,17 +6,17 @@
       "tasks": [
         {
           "id": "11",
-          "name": "Build UI for onboarding flow",
+          "title": "Build UI for onboarding flow",
           "description": "Test",
           "subTasks": ["Research competitor"],
           "status": "DOING"
         },
         {
           "id": "12",
-          "name": "Build UI for search",
+          "title": "Build UI for search",
           "description": "Test",
           "subTasks": ["Research competitor"],
-          "status": "DOING"
+          "status": "TODO"
         }
       ]
     },
