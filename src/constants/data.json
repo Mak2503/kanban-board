@@ -37,7 +37,12 @@
           "subTasks": [
             {
               "id": "121",
-              "title": "Research competitor",
+              "title": "Research competitor pricing and business models",
+              "isCompleted": true
+            },
+            {
+              "id": "122",
+              "title": "Outline a business model that works for our solution",
               "isCompleted": false
             }
           ],
