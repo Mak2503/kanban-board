@@ -1,7 +1,7 @@
 "use client";
 
 import kanbanData from "@/constants/data.json";
-import { uniqBy, groupBy, filter } from "lodash";
+import { filter } from "lodash";
 import Column from "./Column";
 
 type Props = {
