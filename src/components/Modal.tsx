@@ -2,13 +2,13 @@
 
 import { Task } from "@/types";
 
-type Props = {
+type ModalProps = {
   isOpen: Task;
   onClose: () => void;
   children: React.ReactNode;
 };
 
-const Modal = ({ isOpen, onClose, children }: Props) => {
+const Modal = ({ isOpen, onClose, children }: ModalProps) => {
   if (!isOpen) return null;
 
   return (

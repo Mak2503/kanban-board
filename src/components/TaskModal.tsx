@@ -2,12 +2,12 @@ import React from "react";
 import Modal from "./Modal";
 import { Task } from "@/types";
 
-type Props = {
+type TaskModalProps = {
   task: Task;
   onClose: () => void;
 };
 
-const TaskModal = ({ task, onClose }: Props) => {
+const TaskModal = ({ task, onClose }: TaskModalProps) => {
   return (
     <Modal isOpen={task} onClose={onClose}>
       <h2 className="text-2xl font-semibold mb-4">{task.title}</h2>

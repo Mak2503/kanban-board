@@ -4,11 +4,11 @@ import kanbanData from "@/constants/data.json";
 import { filter } from "lodash";
 import Column from "./Column";
 
-type Props = {
+type BoardProps = {
   board: string;
 };
 
-const Board = ({ board }: Props) => {
+const Board = ({ board }: BoardProps) => {
   const kanban = kanbanData.data.find((data) => data.name === board);
 
   const todoTasks = filter(kanban?.tasks, (task) => task.status === "TODO");

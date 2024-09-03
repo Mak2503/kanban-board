@@ -1,11 +1,11 @@
 import React from "react";
 
-type Props = {
+type BoardIconProps = {
   border?: string;
   bg?: string;
 };
 
-const BoardIcon = ({ border = "#858fa1", bg = "#2C2C38" }: Props) => {
+const BoardIcon = ({ border = "#858fa1", bg = "#2C2C38" }: BoardIconProps) => {
   return (
     <div className="w-4 h-4 mr-3">
       <svg viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">

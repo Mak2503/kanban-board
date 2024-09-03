@@ -2,11 +2,11 @@
 
 import { Task } from "@/types";
 
-type Props = {
+type TaskCardProps = {
   task: Task;
 };
 
-const TaskCard = ({ task }: Props) => {
+const TaskCard = ({ task }: TaskCardProps) => {
   const { title, subTasks } = task;
 
   return (

@@ -5,12 +5,12 @@ import kanbanData from "@/constants/data.json";
 import BoardIcon from "./BoardIcon";
 import { Dispatch, SetStateAction } from "react";
 
-type Props = {
+type SideBarProps = {
   board: string;
   setBoard: Dispatch<SetStateAction<string>>;
 };
 
-const SideBar = ({ board, setBoard }: Props) => {
+const SideBar = ({ board, setBoard }: SideBarProps) => {
   return (
     <div className="p-8 w-1/4 h-screen bg-secondaryBg border-r-2 border-r-[#363642]">
       <Logo />

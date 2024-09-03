@@ -6,13 +6,13 @@ import { useState } from "react";
 import Modal from "./Modal";
 import TaskModal from "./TaskModal";
 
-type Props = {
+type ColumnProps = {
   status: string;
   color: string;
   tasks: Task[];
 };
 
-const Column = ({ status, color, tasks }: Props) => {
+const Column = ({ status, color, tasks }: ColumnProps) => {
   const [selectedTask, setSelectedTask] = useState<Task | null>(null);
 
   const openModal = (task: Task) => setSelectedTask(task);
