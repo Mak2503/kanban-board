@@ -9,7 +9,7 @@ type TaskModalProps = {
 
 const TaskModal = ({ task, onClose }: TaskModalProps) => {
   return (
-    <Modal isOpen={task} onClose={onClose}>
+    <Modal isOpen={task !== null} onClose={onClose}>
       <h2 className="text-2xl font-semibold mb-4">{task.title}</h2>
       <p className="text-secondaryText mb-4">{task.description}</p>
       <div>

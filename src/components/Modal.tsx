@@ -3,7 +3,7 @@
 import { Task } from "@/types";
 
 type ModalProps = {
-  isOpen: Task;
+  isOpen: boolean;
   onClose: () => void;
   children: React.ReactNode;
 };
