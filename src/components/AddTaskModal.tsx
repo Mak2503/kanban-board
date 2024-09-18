@@ -53,6 +53,17 @@ const AddTaskModal = ({ isOpen, onClose }: AddTaskModalProps) => {
           <option value="done">Done</option>
         </select>
       </div>
+      <div className="mt-6 flex justify-end">
+        <button
+          onClick={onClose}
+          className="px-4 py-2 border border-primary text-primary rounded-md font-semibold mr-4"
+        >
+          Cancel
+        </button>
+        <button className="px-4 py-2 bg-primary text-primaryText rounded-md font-semibold">
+          Add Task
+        </button>
+      </div>
     </Modal>
   );
 };
