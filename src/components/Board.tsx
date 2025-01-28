@@ -1,19 +1,29 @@
 "use client";
 
-import kanbanData from "@/constants/data.json";
+import { kanbanData } from "@/constants/board";
 import { filter } from "lodash";
 import Column from "./Column";
+import { TaskStatus } from "@/types";
 
 type BoardProps = {
   board: string;
 };
 
 const Board = ({ board }: BoardProps) => {
-  const kanban = kanbanData.data.find((data) => data.name === board);
+  const kanban = kanbanData.find((data) => data.name === board);
 
-  const todoTasks = filter(kanban?.tasks, (task) => task.status === "TODO");
-  const doingTasks = filter(kanban?.tasks, (task) => task.status === "DOING");
-  const doneTasks = filter(kanban?.tasks, (task) => task.status === "DONE");
+  const todoTasks = filter(
+    kanban?.tasks,
+    (task) => task.status === TaskStatus.TODO
+  );
+  const doingTasks = filter(
+    kanban?.tasks,
+    (task) => task.status === TaskStatus.DOING
+  );
+  const doneTasks = filter(
+    kanban?.tasks,
+    (task) => task.status === TaskStatus.DONE
+  );
 
   return (
     <div className="p-8 flex justify-start gap-6">

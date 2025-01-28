@@ -1,6 +1,8 @@
-import React, { Dispatch, SetStateAction, useState } from "react";
+import React, { Dispatch, FormEvent, SetStateAction, useState } from "react";
 import Modal from "./Modal";
 import { Board } from "@/types";
+import Input from "./ui/Input";
+import Button from "./ui/Button";
 
 type CreateBoardModalProps = {
   isOpen: boolean;
@@ -16,43 +18,35 @@ const CreateBoardModal = ({
   setBoardList,
 }: CreateBoardModalProps) => {
   const [title, setTitle] = useState<string>("");
+
+  const handleNewBoard = (e: FormEvent) => {
+    // e.stopPropagation();
+    setBoardList([
+      ...boardList,
+      {
+        id: `${boardList.length + 1}`,
+        name: title,
+        tasks: [],
+      },
+    ]);
+    onClose();
+  };
+
   return (
-    <Modal isOpen={isOpen} onClose={onClose}>
-      <h2 className="text-2xl font-semibold mb-4">Create Board</h2>
-      <div>
-        <label>Title</label>
-        <input
-          type="text"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
+    <Modal title="Create Board" isOpen={isOpen} onClose={onClose}>
+      <form onSubmit={handleNewBoard}>
+        <Input
+          label="Title"
           placeholder="e.g. Web Design"
-          className="w-full mt-2 p-3 rounded-md bg-secondaryBg border-2 border-[#363642] text-primaryText focus:ring-0 focus:outline-none"
+          onChange={(e) => setTitle(e.target.value)}
         />
-      </div>
-      <div className="mt-6 flex justify-end">
-        <button
-          onClick={onClose}
-          className="px-4 py-2 border border-primary text-primary rounded-md font-semibold mr-4"
-        >
-          Cancel
-        </button>
-        <button
-          className="px-4 py-2 bg-primary text-primaryText rounded-md font-semibold"
-          onClick={() => {
-            setBoardList([
-              ...boardList,
-              {
-                id: `${boardList.length + 1}`,
-                name: title,
-                tasks: [],
-              },
-            ]);
-            onClose();
-          }}
-        >
-          Create
-        </button>
-      </div>
+        <div className="mt-6 flex gap-4 justify-end">
+          <Button variant="secondary" onClick={onClose}>
+            Cancel
+          </Button>
+          <Button type="submit">Create</Button>
+        </div>
+      </form>
     </Modal>
   );
 };

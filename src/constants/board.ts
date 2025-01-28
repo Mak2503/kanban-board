@@ -1,0 +1,64 @@
+import { TaskStatus } from "@/types";
+
+export const kanbanData = [
+  {
+    "id": "1",
+    "name": "Platform Launch",
+    "tasks": [
+      {
+        "id": "11",
+        "title": "Build UI for onboarding flow",
+        "description": "Test",
+        "subTasks": [
+          {
+            "id": "111",
+            "title": "Research competitor",
+            "isCompleted": false
+          }
+        ],
+        "status": TaskStatus.DOING
+      },
+      {
+        "id": "12",
+        "title": "Build UI for search",
+        "description": "Test",
+        "subTasks": [
+          {
+            "id": "121",
+            "title": "Research competitor",
+            "isCompleted": false
+          }
+        ],
+        "status": TaskStatus.TODO
+      },
+      {
+        "id": "13",
+        "title": "Build UI for onboarding flow",
+        "description": "Test",
+        "subTasks": [
+          {
+            "id": "121",
+            "title": "Research competitor pricing and business models",
+            "isCompleted": true
+          },
+          {
+            "id": "122",
+            "title": "Outline a business model that works for our solution",
+            "isCompleted": false
+          }
+        ],
+        "status": TaskStatus.TODO
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "name": "Marketing Plan",
+    "tasks": []
+  },
+  {
+    "id": "3",
+    "name": "Roadmap",
+    "tasks": []
+  }
+]

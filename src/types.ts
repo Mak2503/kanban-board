@@ -1,3 +1,9 @@
+export enum TaskStatus {
+  TODO,
+  DOING,
+  DONE
+}
+
 export type Board = {
   id: string;
   name: string;
@@ -8,7 +14,7 @@ export type Task = {
   id: string;
   title: string;
   description: string;
-  status: string;
+  status: TaskStatus;
   subTasks: Subtask[];
 };
 

@@ -9,8 +9,7 @@ type TaskModalProps = {
 
 const TaskModal = ({ task, onClose }: TaskModalProps) => {
   return (
-    <Modal isOpen={task !== null} onClose={onClose}>
-      <h2 className="text-2xl font-semibold mb-4">{task.title}</h2>
+    <Modal title={task.title} isOpen={task !== null} onClose={onClose}>
       <p className="text-secondaryText mb-4">{task.description}</p>
       <div>
         <h3>
@@ -45,7 +44,7 @@ const TaskModal = ({ task, onClose }: TaskModalProps) => {
           value={task.status}
         >
           <option value="todo">Todo</option>
-          <option value="in-progress">In Progress</option>
+          <option value="doing">Doing</option>
           <option value="done">Done</option>
         </select>
       </div>

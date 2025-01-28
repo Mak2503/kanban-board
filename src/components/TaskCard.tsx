@@ -10,7 +10,7 @@ const TaskCard = ({ task }: TaskCardProps) => {
   const { title, subTasks } = task;
 
   return (
-    <div className="px-6 py-6 bg-secondaryBg rounded-md">
+    <div className="px-6 py-6 bg-secondaryBg rounded-md cursor-pointer">
       <h2 className="text-primaryText">{title}</h2>
       <p className="text-secondaryText text-sm">
         {subTasks.filter((subTask) => subTask.isCompleted).length} of{" "}

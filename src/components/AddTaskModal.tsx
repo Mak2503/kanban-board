@@ -1,5 +1,8 @@
 import React from "react";
 import Modal from "./Modal";
+import Button from "./ui/Button";
+import Input from "./ui/Input";
+import TextArea from "./ui/TextArea";
 
 type AddTaskModalProps = {
   isOpen: boolean;
@@ -8,61 +11,44 @@ type AddTaskModalProps = {
 
 const AddTaskModal = ({ isOpen, onClose }: AddTaskModalProps) => {
   return (
-    <Modal isOpen={isOpen} onClose={onClose}>
-      <h2 className="text-2xl font-semibold mb-4">Add New Task</h2>
-      <div>
-        <label>Title</label>
-        <input
-          type="text"
-          placeholder="e.g. Take coffee break"
-          className="w-full mt-2 p-3 rounded-md bg-secondaryBg border-2 border-[#363642] text-primaryText focus:ring-0 focus:outline-none"
-        />
-      </div>
-      <div className="mt-4">
-        <label>Description</label>
-        <textarea
+    <Modal title="Add New Task" isOpen={isOpen} onClose={onClose}>
+      <div className="mt-4 flex flex-col gap-4">
+        <Input label="Title" placeholder="e.g. Take coffee break" />
+        <TextArea
+          label="Description"
           placeholder="e.g. It's always good to take a break. This 15 minute break will recharge the batteries a little."
-          className="w-full mt-2 p-3 rounded-md bg-secondaryBg border-2 border-[#363642] text-primaryText focus:ring-0 focus:outline-none"
         />
-      </div>
-      <div className="mt-4">
-        <label>Subtasks</label>
-        <div className="w-full mt-2 flex items-center">
-          <input
-            type="text"
-            placeholder="e.g. Make coffee"
-            className="w-full p-3 rounded-md bg-secondaryBg border-2 border-[#363642] text-primaryText focus:ring-0 focus:outline-none"
-          />
-          <button className="ml-4 text-4xl text-secondaryText font-normal">
-            &times;
+        <div>
+          <label>Subtasks</label>
+          <div className="w-full mt-2 flex items-center">
+            <input
+              type="text"
+              placeholder="e.g. Make coffee"
+              className="w-full p-3 rounded-md bg-secondaryBg border-2 border-[#363642] text-primaryText focus:ring-0 focus:outline-none"
+            />
+            <button className="ml-4 text-4xl text-secondaryText font-normal">
+              &times;
+            </button>
+          </div>
+          <button className="w-full mt-4 p-3 rounded-full bg-primaryText text-primary font-semibold focus:ring-0 focus:outline-none">
+            + Add New Subtask
           </button>
         </div>
-        <button className="w-full mt-4 p-3 rounded-full bg-primaryText text-primary font-semibold focus:ring-0 focus:outline-none">
-          + Add New Subtask
-        </button>
-      </div>
-      <div className="mt-4">
-        <label>Status</label>
-        {/* TODO: Add custom dropdown */}
-        <select
-          className="w-full mt-4 p-3 rounded-md bg-secondaryBg border-2 border-[#363642] text-primaryText focus:ring-0 focus:outline-none"
-          value={"todo"}
-        >
-          <option value="todo">Todo</option>
-          <option value="in-progress">In Progress</option>
-          <option value="done">Done</option>
-        </select>
-      </div>
-      <div className="mt-6 flex justify-end">
-        <button
-          onClick={onClose}
-          className="px-4 py-2 border border-primary text-primary rounded-md font-semibold mr-4"
-        >
-          Cancel
-        </button>
-        <button className="px-4 py-2 bg-primary text-primaryText rounded-md font-semibold">
-          Add Task
-        </button>
+        <div>
+          <label>Status</label>
+          {/* TODO: Add custom dropdown */}
+          <select className="w-full mt-4 p-3 rounded-md bg-secondaryBg border-2 border-[#363642] text-primaryText focus:ring-0 focus:outline-none">
+            <option value="todo">Todo</option>
+            <option value="doing">Doing</option>
+            <option value="done">Done</option>
+          </select>
+        </div>
+        <div className="mt-2 flex gap-4 justify-end">
+          <Button variant="secondary" onClick={onClose}>
+            Cancel
+          </Button>
+          <Button>Add Task</Button>
+        </div>
       </div>
     </Modal>
   );

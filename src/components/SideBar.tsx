@@ -1,10 +1,10 @@
 "use client";
 
 import Logo from "./Logo";
-import kanbanData from "@/constants/data.json";
 import BoardIcon from "./BoardIcon";
 import { Dispatch, SetStateAction, useState } from "react";
 import { Board } from "@/types";
+import { CgCollage } from "react-icons/cg";
 import CreateBoardModal from "./CreateBoardModal";
 
 type SideBarProps = {
@@ -40,20 +40,16 @@ const SideBar = ({
                 } font-semibold`}
                 onClick={() => setBoard(data.name)}
               >
-                {board === data.name ? (
-                  <BoardIcon border="#feffff" bg="#645fc6" />
-                ) : (
-                  <BoardIcon />
-                )}
-                <span>{data.name}</span>
+                <CgCollage className="h-5 w-5" />
+                <span className="ml-2">{data.name}</span>
               </div>
             ))}
             <div
-              className={`flex items-center p-3 pl-8 -ml-8 text-primary font-semibold`}
+              className={`flex items-center cursor-pointer p-3 pl-8 -ml-8 text-primary font-semibold`}
               onClick={() => setIsModalOpen(true)}
             >
-              <BoardIcon border="#645fc6" />
-              <span>+ Create New Board</span>
+              <CgCollage className="h-5 w-5" />
+              <span className="ml-2">+ Create New Board</span>
             </div>
           </div>
         </div>

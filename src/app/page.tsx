@@ -2,13 +2,13 @@
 
 import SideBar from "@/components/SideBar";
 import { useState } from "react";
-import kanbanData from "@/constants/data.json";
+import { kanbanData } from "@/constants/board";
 import Header from "@/components/Header";
 import Board from "@/components/Board";
 
 export default function Home() {
-  const [boardList, setBoardList] = useState(kanbanData.data);
-  const [board, setBoard] = useState<string>(kanbanData.data[0].name);
+  const [boardList, setBoardList] = useState(kanbanData);
+  const [board, setBoard] = useState<string>(kanbanData[0].name);
   return (
     <main className="bg-primaryBg flex">
       <SideBar
