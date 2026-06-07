@@ -1,7 +1,7 @@
 export enum TaskStatus {
-  TODO,
-  DOING,
-  DONE
+  TODO = "todo",
+  DOING = "doing",
+  DONE = "done"
 }
 
 export type Board = {

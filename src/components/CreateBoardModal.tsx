@@ -1,4 +1,4 @@
-import React, { Dispatch, FormEvent, SetStateAction, useState } from "react";
+import React, { Dispatch, FormEvent, SetStateAction } from "react";
 import Modal from "./Modal";
 import { Board } from "@/types";
 import Input from "./ui/Input";
@@ -17,10 +17,10 @@ const CreateBoardModal = ({
   boardList,
   setBoardList,
 }: CreateBoardModalProps) => {
-  const [title, setTitle] = useState<string>("");
-
   const handleNewBoard = (e: FormEvent) => {
     // e.stopPropagation();
+    const form = e.target as HTMLFormElement
+    const title = new FormData(form).get("title")?.toString() as string;
     setBoardList([
       ...boardList,
       {
@@ -37,8 +37,8 @@ const CreateBoardModal = ({
       <form onSubmit={handleNewBoard}>
         <Input
           label="Title"
+          name="title"
           placeholder="e.g. Web Design"
-          onChange={(e) => setTitle(e.target.value)}
         />
         <div className="mt-6 flex gap-4 justify-end">
           <Button variant="secondary" onClick={onClose}>

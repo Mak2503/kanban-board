@@ -6,7 +6,14 @@ const Button: React.FC<{
   type?: "button" | "submit";
   onClick?: () => void;
   children: React.ReactNode;
-}> = ({ variant = "primary", type = "button", onClick, children }) => {
+  className?: string;
+}> = ({
+  variant = "primary",
+  type = "button",
+  onClick,
+  children,
+  className,
+}) => {
   return (
     <button
       type={type}
@@ -14,7 +21,8 @@ const Button: React.FC<{
         "px-4 py-2 rounded-md font-semibold",
         variant === "primary"
           ? "bg-primary text-primaryText"
-          : "border-2 border-primary text-primary"
+          : "border-2 border-primary text-primary",
+        className
       )}
       onClick={onClick}
     >

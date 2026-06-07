@@ -1,7 +1,5 @@
 "use client";
 
-import { Task } from "@/types";
-
 type ModalProps = {
   isOpen: boolean;
   title: string;
@@ -22,12 +20,12 @@ const Modal = ({ isOpen, title, onClose, children }: ModalProps) => {
         onClick={(e) => e.stopPropagation()}
       >
         <h2 className="text-2xl font-semibold mb-4">{title}</h2>
-        {/* <button
+        <button
           className="absolute top-3 right-3 text-gray-600 hover:text-gray-900"
           onClick={onClose}
         >
           &times;
-        </button> */}
+        </button>
         {children}
       </div>
     </div>
